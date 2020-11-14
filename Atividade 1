@@ -1,0 +1,43 @@
+// Ordenação por Seleção //
+
+void selection_sort(int vet[], int tam) { 
+  int i, j, min, aux;
+  for (i = 0; i < (tam-1); i++) 
+  {
+     min = i;
+     for (j = (i+1); j < tam; j++) {
+       if(vet[j] < vet[min]) 
+         min = j;
+     }
+     if (i != min) {
+       aux = num[i];
+       num[i] = num[min];
+       num[min] = aux;
+     }
+  }
+}
+
+// Vetor com 1000 elementos: 0,0044346 ms, 499500 comparações, 993,1 trocas. //
+
+
+// Ordenação por Troca //
+
+void bubble_sort (int vetor[], int n) {
+    int k, j, aux;
+
+    for (k = 1; k < n; k++) {
+        printf("\n[%d] ", k);
+
+        for (j = 0; j < n - k; j++) {
+            printf("%d, ", j);
+
+            if (vetor[j] > vetor[j + 1]) {
+                aux          = vetor[j];
+                vetor[j]     = vetor[j + 1];
+                vetor[j + 1] = aux;
+            }
+        }
+    }
+}
+
+// Vetor com 1000 elementos : 0,0078604 ms,  499500 comparações,  249816 trocas. //
